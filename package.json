@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "four",
+  "description": "Toolkit for the fourth dimension",
+  "author": "Julien Dargelos <contact@juliendargelos.com>",
+  "license": "MIT",
+  "repository": "four",
+  "homepage": "https://github.com/juliendargelos/four#readme",
+  "bugs": "https://github.com/juliendargelos/four/issues",
+  "workspaces": [
+    "packages/clock",
+    "packages/loop",
+    "packages/record"
+  ],
+  "scripts": {
+    "all": "ls packages | xargs -I% -n1 yarn $1 --cwd packages/%"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn all test && yarn all build"
+    }
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "@types/jest": "^24.0.13",
+    "@typescript-eslint/eslint-plugin": "^1.8.0",
+    "@typescript-eslint/parser": "^1.8.0",
+    "eslint": "^5.12.1",
+    "husky": "^4.0.7",
+    "jest": "^24.9.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "3.5.1"
+  }
+}
